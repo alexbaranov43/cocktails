@@ -116,7 +116,7 @@ router.post('/cocktails/create', function(req, res){
         res.redirect('/cocktails')
     });
 });
-router.put('/cocktails/update/:id', function(req, res){
+router.post('/cocktails/update/:id', function(req, res){
     var condition = 'id = ' + req.params.id;
     console.log('condition ', condition);
     Cocktails.updateOne({'enjoyed': req.body.enjoyed}, condition, function(data){
