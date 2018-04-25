@@ -1,0 +1,44 @@
+<h1>Famous Cocktail Delights</h1>
+<div class="row">
+    <div class="col-md-6">
+        <h2>Cocktail Queue</h2>
+
+        <ul class="list-group">
+            {{#each Cocktails}} {{#unless this.enjoyed}}
+            <li class="list-group-item">
+                <div class="input-group">
+                    <p class="lead"> {{this.cocktail_name}} </p>
+                    <span class="input-group-btn">
+                        <form action="cocktails/update/{{this.id}}?_method=PUT" method="POST">
+                            <input type="hidden" name="enjoyed" value="true">
+                            <button class="btn btn-default btn-lg" type="submit"> Cheers </button>
+                        </form>
+                    </span>
+                </div>
+            </li>
+            {{/unless}} {{/each}}
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <h2>Cocktails Conquered</h2>
+        <ul class="list-group">
+            {{#each Cocktails}} {{#if this.enjoyed}}
+            <li class="list-group-item">
+                <div class="input-group">
+                    <p class="lead"> {{this.cocktail_name}} </p>
+                </div>
+            </li>
+            {{/if}} {{/each}}
+        </ul>
+    </div>
+</div>
+<h2>Add a Drink</h2>
+<form class="create-form">
+
+    <div class="form-group">
+        <label for="ca">Cocktail:</label>
+        <input type="text" id="ca" name="name">
+    </div>
+
+    <button type="submit">Add to Queue</button>
+</form>
