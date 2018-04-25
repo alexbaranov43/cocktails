@@ -1,3 +1,21 @@
+body{
+  font-family: 'Lobster', cursive;
+  background: #546de5
+
+}
+
+.jumbotron {
+  background: #f19066
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+
+.list-group-item{
+  background: #f5cd79
+}
 li {
     padding: 5px;
     margin: 5px;
@@ -11,8 +29,7 @@ li {
   .create-update-form {
     padding: 5px;
     margin: 5px;
-    background: aqua;
-  }
+    }
   
   .form-group {
     margin-bottom: 5px;
